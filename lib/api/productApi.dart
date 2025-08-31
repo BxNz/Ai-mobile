@@ -24,7 +24,12 @@ class ProductApi {
       print("Product Response: ${response.statusCode} - ${response.body}");
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        return data;
+        if (data['status'] == true && data['data'] != null) {
+          return data['data'];
+        } else {
+          print("API returned error: ${data['messgae'] ?? 'Unknown error'}");
+          return null;
+        }
       } else {
         print("Product failed: ${response.body}");
         return null;

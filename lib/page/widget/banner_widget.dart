@@ -29,20 +29,13 @@ class _BannerWidgetState extends State<BannerWidget> {
               itemBuilder: (context, index, i) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.network(banner.banners[index]['image']),
-                        // child: Image.network(
-                        //   // 'https://picsum.photos/250?image=$index',
-                        //   data[index],
-                        //   fit: BoxFit.cover,
-                        //   // height: 120,
-                        //   width: double.infinity,
-                        // ),
-                      ),
-                    ],
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      banner.banners[index]['image'],
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
                   ),
                 );
               },

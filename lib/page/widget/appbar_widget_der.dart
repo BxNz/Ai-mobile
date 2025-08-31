@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 appbarWidgetDer() {
   return AppBar(
+    leading: Text(''),
+    leadingWidth: 0,
     title: Container(
       height: 50,
       width: double.infinity,
